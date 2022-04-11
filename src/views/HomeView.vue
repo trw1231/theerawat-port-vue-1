@@ -9,7 +9,7 @@
     <section>
         <b-container class="mt-5">
             <b-row align-v="center">
-                <b-col cols="12" md="6" class="mb-3 mb-md-0" data-aos="slide-up" data-aos-duration="800" data-aos-delay="100">
+                <b-col cols="12" md="6" class="mb-3 mb-md-0">
                     <h2 class="font-weight-bold">Building brands on the web since 2011</h2>
                     <p class="text-muted">Oshine is fully compatible with the Woo Commerce, the most popular & free ecommerece plugin for wordpress. Showcase & Sell your products with beautiful product grids and individual product pages. </p>
                     <div class="text-center text-md-left">
@@ -17,8 +17,8 @@
                     </div>
                     
                 </b-col>
-                <b-col cols="12" md="6" data-aos="slide-up" data-aos-duration="800" data-aos-delay="100">
-                    <b-img :src="require('../assets/images/a5.jpg')" alt="" fluid class="custom-rounded-image"></b-img>
+                <b-col cols="12" md="6" >
+                    <b-img src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" fluid class="custom-rounded-image"></b-img>
                 </b-col>
             </b-row>
         </b-container>
@@ -37,7 +37,7 @@
                 </b-col>
             </b-row>
             <b-row>
-                <b-col cols="12" md="6" lg="4" v-for="item in whatwedoItems" :key="item.id" data-aos="slide-up" data-aos-duration="800" data-aos-delay="100">
+                <b-col cols="12" md="6" lg="4" v-for="(item, index) in whatwedoItems" :key="item.id" data-aos="slide-up" :data-aos-duration="((index+1)*200)+1000">
                     <home-whatwedo :item="item"></home-whatwedo>
                 </b-col>
             </b-row>
@@ -57,8 +57,8 @@
                 </b-col>
             </b-row>
             <b-row class="mt-4">
-                <b-col cols="12" md="6" lg="4" v-for="item in workItems" :key="item.id" class="p-2 p-md-4" >
-                    <home-recent-work :item="item"></home-recent-work>
+                <b-col cols="12" md="6" lg="4" v-for="(item, index) in workItems" :key="item.id" class="p-2 p-md-4" >
+                    <home-recent-work :item="item" data-aos="slide-up" :data-aos-duration="((index+1)*200)+100" ></home-recent-work>
                 </b-col>
             </b-row>
             <b-row>
@@ -198,37 +198,37 @@ export default {
                 id: 1,
                 title: "Title1",
                 description: "",
-                image: "",
+                image: "https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
               },
               {
                 id: 2,
                 title: "Title2",
                 description: "",
-                image: "",
+                image: "https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
               },
               {
                 id: 3,
                 title: "Title3",
                 description: "",
-                image: "",
+                image: "https://images.pexels.com/photos/235621/pexels-photo-235621.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
               },
               {
                 id: 4,
                 title: "Title4",
                 description: "",
-                image: "",
+                image: "https://images.pexels.com/photos/572897/pexels-photo-572897.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
               },
               {
                 id: 5,
                 title: "Title5",
                 description: "",
-                image: "",
+                image: "https://images.pexels.com/photos/3244513/pexels-photo-3244513.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
               },
               {
                 id: 6,
                 title: "Title6",
                 description: "",
-                image: "",
+                image: "https://images.pexels.com/photos/4245826/pexels-photo-4245826.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
               },
             ],
             testimonialItems: [
@@ -280,16 +280,19 @@ export default {
                 id: 1,
                 title: "Oshine – a Creative Multipurpose WordPress theme",
                 date: "October 10, 2014",
+                image: "https://images.pexels.com/photos/5137664/pexels-photo-5137664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               },
               {
                 id: 2,
                 title: "If You Are Good At Something, Don’t Do It For Free",
                 date: "October 10, 2014",
+                image: "https://images.pexels.com/photos/5137664/pexels-photo-5137664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               },
               {
                 id: 3,
                 title: "Woocommerce, WPML, Master Slider and much more",
                 date: "October 10, 2014",
+                image: "https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               }
             ],
         }

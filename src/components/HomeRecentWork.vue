@@ -15,7 +15,7 @@
         </b-card> -->
 
         <div class="custom-overlay-wrapper">
-            <img src="https://picsum.photos/900/250/?image=3"  alt="">
+            <img :src="item.image"  alt="">
               <div class="card__overlay">
                     <div class="overlay__text">
                     <h3>{{item.title}}</h3>
