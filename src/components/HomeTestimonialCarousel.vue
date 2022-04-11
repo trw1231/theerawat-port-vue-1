@@ -1,6 +1,6 @@
 <template>
   <swiper ref="mySwiper" :options="swiperOptions">
-    <swiper-slide v-for="item in items" :key="item.id" style="width: 100%; height: 450px; background-color: transparent;">
+    <swiper-slide v-for="item in items" :key="item.id" style="width: 100%; background-color: transparent;">
         <p class="text-center text-white mt-auto" style="font-size: 24px;">
             {{item.description}}
         </p>
@@ -14,15 +14,16 @@
 
 <script>
   export default {
-    name: 'BaseCarousel',
+    name: 'HomeTestimonialCarousel',
     props: ["items"],
     data() {
       return {
         swiperOptions: {
+          loop: true,
           slidesPerView: 1,
-          pagination: {
-            el: '.swiper-pagination'
-          },
+          // pagination: {
+          //   el: '.swiper-pagination'
+          // },
           // Some Swiper option/callback...
         }
       }
@@ -37,3 +38,33 @@
     }
   }
 </script>
+
+<style scoped> 
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 80px;
+  height: 80px;
+}
+  
+</style>

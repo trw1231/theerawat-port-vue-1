@@ -2,11 +2,13 @@
       <section class="hero">
         <b-container class="h-100">
           <b-row align-v="center" class="h-100 justify-content-center">
-            <b-col cols="12" md="8">
-              <h1 class="display-4 font-weight-bold text-center">Creative Agency based out of London, UK</h1>
+            <b-col cols="12" md="8" class="text-center">
+                <h1 class="display-4 font-weight-bold">{{ title ? title : "Content Title" }}</h1>
+                <b-button variant="primary" class="mt-4" v-if="buttonText">{{ buttonText }}</b-button>
             </b-col>
           </b-row>
-          <b-row>
+          <b-row >
+
 
           </b-row>
         </b-container>
@@ -21,19 +23,31 @@
 <script>
 export default {
     name: "BaseMasthead",
+    props: ['title', 'buttonText'],
 }
 </script>
 
 <style scoped>
 .hero {
-    background: #115d98;
+    /* background: #115d98; */
+    
     position: relative;
     color: #fff;
     height: 80vh;
-    background: url('@/assets/images/bg-masthead.jpg'); 
     background-size: cover; 
     background-position: center center; 
     background-repeat: no-repeat
+}
+.hero::before {    
+      content: "";
+      background:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/bg-masthead.jpg');
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 1;
 }
 
 .custom-shape-divider-bottom-1649634725 {
